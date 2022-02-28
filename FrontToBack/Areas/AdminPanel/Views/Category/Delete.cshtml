@@ -1,0 +1,31 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="col-lg-6">
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="fs-17 font-weight-600 mb-0">@Model.Name</h6>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="peragraph_ex">
+                <p> @Html.Raw(Model.Description) </p>
+                <p class="text-danger">Are you sure want to delete?</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <form method="post" class="forms-sample">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a class="btn btn-light" asp-action="Index">Cancel</a>
+    </div>
+</div>
+

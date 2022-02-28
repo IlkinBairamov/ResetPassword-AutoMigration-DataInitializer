@@ -1,0 +1,43 @@
+﻿@model List<BasketViewModel>
+@{
+    ViewData["Title"] = "Basket";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+            <th scope="col">Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>
+                    <img src="~/img/@item.Image" alt="" style="height:100px;">
+                   
+                </td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Plus" asp-route-id="@item.Id">+ </a>
+                    @item.Count
+                    <a asp-controller="Home" asp-action="Minus" asp-route-id="@item.Id"> -</a>
+                </td>
+                <td>@item.TotalAmount</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">  
+                        <i class=" remove-icon fas fa-trash-alt" data-id="2" aria-hidden="true"></i>
+                    </a>
+               </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,40 @@
+﻿
+@model ExpertSectionList
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="fs-17 font-weight-600 mb-0">Update Expert</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Photo" class="font-weight-600">Photo</label>
+                        <input class="form-control" placeholder="Photo" asp-for="Photo" accept="image/*">
+                        <span asp-validation-for="Photo" class="text-danger">  </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="font-weight-600">Description</label>
+                        <input class="form-control" placeholder="Title" asp-for="Title">
+                        <span asp-validation-for="Title" class="text-danger">  </span>
+                    </div> <div class="form-group">
+                               <label asp-for="Subtitle" class="font-weight-600">Subtitle</label>
+                        <input class="form-control" placeholder="Subtitle" asp-for="Subtitle">
+                        <span asp-validation-for="Subtitle" class="text-danger">  </span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
